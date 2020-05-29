@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightGray">#E6E6E6</color>
+    <color name="colorGray">#808080</color>
+    <color name="colorDarkGray">#1A1A1A</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorClear">#00000000</color>
+    <color name="colorMenuSelected">#26808080</color>
+    <color name="colorDayHighlight">#BFD0FF</color>
+    <color name="colorNightHighlight">#001040</color>
+    <color name="colorDaySelectedHighlight">#A0A7BF</color>
+    <color name="colorNightSelectedHighlight">#40475F</color>
+    <color name="colorRed">#FF0000</color>
+</resources>

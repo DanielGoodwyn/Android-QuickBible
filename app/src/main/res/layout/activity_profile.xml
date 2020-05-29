@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:gravity="center"
+    android:windowSoftInputMode="adjustResize"
+    tools:context=".ProfileActivity"
+    tools:ignore="InvalidId">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="14dp"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:autofillHints="@string/username"
+            android:background="@drawable/edit_text_day"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:hint="@string/username"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20dp"
+            tools:ignore="SpUsage" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:autofillHints="@string/email"
+            android:background="@drawable/edit_text_day"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:hint="@string/email"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20dp"
+            tools:ignore="SpUsage,TextFields" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:autofillHints="@string/password"
+            android:background="@drawable/edit_text_day"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20dp"
+            tools:ignore="SpUsage,TextFields" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/signUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:onClick="signUpButtonClicked"
+                android:padding="7dp"
+                android:text="@string/sign_up"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                tools:ignore="ButtonStyle,SpUsage" />
+
+            <Button
+                android:id="@+id/signIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:onClick="signInButtonClicked"
+                android:padding="7dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                tools:ignore="ButtonStyle,SpUsage" />
+
+            <Button
+                android:id="@+id/signOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:onClick="signOutButtonClicked"
+                android:padding="7dp"
+                android:text="@string/sign_out"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                tools:ignore="ButtonStyle,SpUsage" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:onClick="updateButtonClicked"
+                android:padding="7dp"
+                android:text="@string/update"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                tools:ignore="ButtonStyle,SpUsage" />
+
+            <Button
+                android:id="@+id/toggleNight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:onClick="toggleNightButtonClicked"
+                android:padding="7dp"
+                android:text="@string/Day"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                tools:ignore="ButtonStyle,SpUsage" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/resetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:onClick="resetPasswordClicked"
+            android:padding="7dp"
+            android:text="@string/reset_password"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            tools:ignore="SpUsage,TextFields" />
+
+        <Button
+            android:id="@+id/goToBiblePage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:onClick="goToBiblePageButtonClicked"
+            android:padding="7dp"
+            android:text="@string/bible"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            tools:ignore="SpUsage,TextFields" />
+    </LinearLayout>
+</RelativeLayout>

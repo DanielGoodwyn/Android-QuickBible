@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/BibleLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:windowSoftInputMode="adjustResize"
+    tools:context="BibleActivity"
+    tools:ignore="InvalidId">
+
+    <ImageButton
+        android:id="@+id/nightMode"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/day"
+        android:src="@drawable/sun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/topLabelTextView"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/navigation_label"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="@string/bible"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/random"
+        app:layout_constraintStart_toEndOf="@+id/nightMode"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage" />
+
+    <ImageButton
+        android:id="@+id/random"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/random"
+        android:src="@drawable/random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/previous"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorClear"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/bottomLabelTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLabelTextView" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorClear"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/bottomLabelTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLabelTextView" />
+
+    <com.quickbible.quickbible.BounceScrollView
+        android:id="@+id/tableScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toBottomOf="@+id/topLabelTextView">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textSize="24dp"
+            tools:ignore="SpUsage" />
+
+    </com.quickbible.quickbible.BounceScrollView>
+
+    <View
+        android:alpha="0"
+        android:id="@+id/navigationDisplayView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toBottomOf="@+id/topLabelTextView" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/previousBookTextViewOldTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/previousBook"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toBottomOf="@+id/topLabelTextView" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/currentBookTextViewOldTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/currentBook"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toBottomOf="@+id/previousBookTextViewOldTestament" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/nextBookTextViewOldTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/nextBook"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toBottomOf="@+id/currentBookTextViewOldTestament" />
+
+    <View
+        android:id="@+id/topLeftSpacer"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/previousChapterTextViewOldTestament"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toBottomOf="@+id/nextBookTextViewOldTestament" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/previousChapterTextViewOldTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="end"
+        android:text="@string/previousChapter"
+        app:layout_constraintEnd_toStartOf="@+id/currentChapterTextViewOldTestament"
+        app:layout_constraintStart_toEndOf="@+id/topLeftSpacer"
+        app:layout_constraintTop_toBottomOf="@+id/nextBookTextViewOldTestament" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/currentChapterTextViewOldTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/currentChapter"
+        app:layout_constraintEnd_toStartOf="@+id/nextChapterTextViewOldTestament"
+        app:layout_constraintStart_toEndOf="@+id/previousChapterTextViewOldTestament"
+        app:layout_constraintTop_toBottomOf="@+id/nextBookTextViewOldTestament" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/nextChapterTextViewOldTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="end"
+        android:text="@string/nextChapter"
+        app:layout_constraintEnd_toStartOf="@+id/topRightSpacer"
+        app:layout_constraintStart_toEndOf="@+id/currentChapterTextViewOldTestament"
+        app:layout_constraintTop_toBottomOf="@+id/nextBookTextViewOldTestament" />
+
+    <View
+        android:id="@+id/topRightSpacer"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/nextChapterTextViewOldTestament"
+        app:layout_constraintTop_toBottomOf="@+id/nextBookTextViewOldTestament" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/previousBookTextViewNewTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/previousBook"
+        app:layout_constraintBottom_toTopOf="@+id/currentBookTextViewNewTestament"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/currentBookTextViewNewTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/currentBook"
+        app:layout_constraintBottom_toTopOf="@+id/nextBookTextViewNewTestament"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/nextBookTextViewNewTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/nextBook"
+        app:layout_constraintBottom_toTopOf="@+id/currentChapterTextViewNewTestament"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/previous" />
+
+    <View
+        android:id="@+id/bottomLeftSpacer"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/previousChapterTextViewOldTestament"
+        app:layout_constraintStart_toEndOf="@+id/previous"
+        app:layout_constraintTop_toBottomOf="@+id/nextBookTextViewNewTestament" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/previousChapterTextViewNewTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="end"
+        android:text="@string/previousChapter"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/currentChapterTextViewNewTestament"
+        app:layout_constraintStart_toEndOf="@+id/bottomLeftSpacer" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/currentChapterTextViewNewTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/currentChapter"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/nextChapterTextViewNewTestament"
+        app:layout_constraintStart_toEndOf="@+id/previousChapterTextViewNewTestament" />
+
+    <TextView
+        android:alpha="0"
+        android:id="@+id/nextChapterTextViewNewTestament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="start"
+        android:text="@string/nextChapter"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/bottomRightSpacer"
+        app:layout_constraintStart_toEndOf="@+id/currentChapterTextViewNewTestament" />
+
+    <View
+        android:id="@+id/bottomRightSpacer"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintStart_toEndOf="@+id/nextChapterTextViewOldTestament"
+        app:layout_constraintTop_toBottomOf="@+id/nextBookTextViewNewTestament" />
+
+    <ImageButton
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/left"
+        android:src="@drawable/left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bottomLabelTextView"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/navigation_label"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="@string/verse"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/right"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        tools:ignore="SpUsage" />
+
+    <ImageButton
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/right"
+        android:src="@drawable/right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/menuBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorClear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/menuProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuHistory"
+        app:layout_constraintEnd_toEndOf="@+id/menuSettings"
+        app:layout_constraintStart_toStartOf="@+id/left"
+        app:layout_constraintTop_toTopOf="@+id/topLabelTextView" />
+
+    <View
+        android:id="@+id/menuSettings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuHighlights"
+        app:layout_constraintEnd_toEndOf="@+id/menuVersions"
+        app:layout_constraintStart_toStartOf="@+id/menuProfile"
+        app:layout_constraintTop_toTopOf="@+id/topLabelTextView" />
+
+    <View
+        android:id="@+id/menuVersions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuReferences"
+        app:layout_constraintEnd_toEndOf="@id/right"
+        app:layout_constraintStart_toStartOf="@+id/menuSettings"
+        app:layout_constraintTop_toTopOf="@id/topLabelTextView" />
+
+    <View
+        android:id="@+id/menuHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuAudio"
+        app:layout_constraintEnd_toEndOf="@+id/menuSettings"
+        app:layout_constraintStart_toStartOf="@id/left"
+        app:layout_constraintTop_toTopOf="@+id/menuProfile" />
+
+    <View
+        android:id="@+id/menuHighlights"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuHighlight"
+        app:layout_constraintEnd_toEndOf="@+id/menuVersions"
+        app:layout_constraintStart_toStartOf="@+id/menuProfile"
+        app:layout_constraintTop_toTopOf="@+id/menuSettings" />
+
+    <View
+        android:id="@+id/menuReferences"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menuCopy"
+        app:layout_constraintEnd_toEndOf="@id/right"
+        app:layout_constraintStart_toStartOf="@+id/menuSettings"
+        app:layout_constraintTop_toTopOf="@+id/menuVersions" />
+
+    <View
+        android:id="@+id/menuAudio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomLabelTextView"
+        app:layout_constraintEnd_toEndOf="@+id/menuSettings"
+        app:layout_constraintStart_toStartOf="@id/left"
+        app:layout_constraintTop_toTopOf="@+id/menuHistory" />
+
+    <View
+        android:id="@+id/menuHighlight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomLabelTextView"
+        app:layout_constraintEnd_toEndOf="@+id/menuVersions"
+        app:layout_constraintStart_toStartOf="@+id/menuProfile"
+        app:layout_constraintTop_toTopOf="@+id/menuHighlights" />
+
+    <View
+        android:id="@+id/menuCopy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomLabelTextView"
+        app:layout_constraintEnd_toEndOf="@id/right"
+        app:layout_constraintStart_toStartOf="@+id/menuSettings"
+        app:layout_constraintTop_toTopOf="@+id/menuReferences" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/profile"
+        android:src="@drawable/person"
+        app:layout_constraintBottom_toBottomOf="@+id/history"
+        app:layout_constraintEnd_toEndOf="@+id/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/settings"
+        android:src="@drawable/cog"
+        app:layout_constraintBottom_toBottomOf="@+id/highlights"
+        app:layout_constraintEnd_toEndOf="@+id/versions"
+        app:layout_constraintStart_toStartOf="@+id/profile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/versions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/versions"
+        android:src="@drawable/versions"
+        app:layout_constraintBottom_toBottomOf="@+id/references"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/settings"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/history"
+        android:src="@drawable/clock"
+        app:layout_constraintBottom_toBottomOf="@+id/audio"
+        app:layout_constraintEnd_toEndOf="@+id/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/highlights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/highlights"
+        android:src="@drawable/lines"
+        app:layout_constraintBottom_toBottomOf="@+id/highlight"
+        app:layout_constraintEnd_toEndOf="@+id/versions"
+        app:layout_constraintStart_toStartOf="@+id/profile"
+        app:layout_constraintTop_toTopOf="@+id/settings" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/references"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/references"
+        android:src="@drawable/references"
+        app:layout_constraintBottom_toBottomOf="@+id/copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/settings"
+        app:layout_constraintTop_toTopOf="@+id/versions" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/audio"
+        android:src="@drawable/play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/history" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/highlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/highlight"
+        android:src="@drawable/highlighter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/versions"
+        app:layout_constraintStart_toStartOf="@+id/profile"
+        app:layout_constraintTop_toTopOf="@+id/highlights" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorClear"
+        android:contentDescription="@string/copy"
+        android:src="@drawable/copy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/settings"
+        app:layout_constraintTop_toTopOf="@+id/references" />
+
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/profileLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/profile"
+        app:layout_constraintEnd_toEndOf="@+id/profile"
+        app:layout_constraintStart_toStartOf="@+id/profile"
+        app:layout_constraintTop_toBottomOf="@+id/profile" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/settingsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/settings"
+        app:layout_constraintEnd_toEndOf="@+id/settings"
+        app:layout_constraintStart_toStartOf="@+id/settings"
+        app:layout_constraintTop_toBottomOf="@+id/settings" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/versionsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/versions"
+        app:layout_constraintEnd_toEndOf="@+id/versions"
+        app:layout_constraintStart_toStartOf="@+id/versions"
+        app:layout_constraintTop_toBottomOf="@+id/versions" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/historyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/history"
+        app:layout_constraintEnd_toEndOf="@+id/history"
+        app:layout_constraintStart_toStartOf="@+id/history"
+        app:layout_constraintTop_toBottomOf="@+id/history" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/highlightsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/highlights"
+        app:layout_constraintEnd_toEndOf="@+id/highlights"
+        app:layout_constraintStart_toStartOf="@+id/highlights"
+        app:layout_constraintTop_toBottomOf="@+id/highlights" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/referencesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/references"
+        app:layout_constraintEnd_toEndOf="@+id/references"
+        app:layout_constraintStart_toStartOf="@+id/references"
+        app:layout_constraintTop_toBottomOf="@+id/references" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/audioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/audio"
+        app:layout_constraintEnd_toEndOf="@+id/audio"
+        app:layout_constraintStart_toStartOf="@+id/audio"
+        app:layout_constraintTop_toBottomOf="@+id/audio" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/highlightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/highlight"
+        app:layout_constraintEnd_toEndOf="@+id/highlight"
+        app:layout_constraintStart_toStartOf="@+id/highlight"
+        app:layout_constraintTop_toBottomOf="@+id/highlight" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/copyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="9pt"
+        android:paddingRight="9pt"
+        android:paddingBottom="18pt"
+        android:text="@string/copy"
+        app:layout_constraintEnd_toEndOf="@+id/copy"
+        app:layout_constraintStart_toStartOf="@+id/copy"
+        app:layout_constraintTop_toBottomOf="@+id/copy" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

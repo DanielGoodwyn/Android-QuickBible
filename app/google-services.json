@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "976670996361",
+    "firebase_url": "https://quick-bible-ios.firebaseio.com",
+    "project_id": "quick-bible-ios",
+    "storage_bucket": "quick-bible-ios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976670996361:android:41affc878b61b32a0d1358",
+        "android_client_info": {
+          "package_name": "com.quickbible.quickbible"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976670996361-qa91tk11svnvaa5kntn5e5oblenmrbjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-kZ5T-RRakTNPZsTU7xrqZl6OWj4MQRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976670996361-qa91tk11svnvaa5kntn5e5oblenmrbjs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "976670996361-3cehlver03hs9ad0qds890q247png33u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "QuickBible"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
